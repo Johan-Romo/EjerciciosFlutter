@@ -3,6 +3,7 @@ import 'package:ejerciciodeber1/Paginas/FacturaElectrica.dart';
 import 'package:ejerciciodeber1/Paginas/TernaPitagorica.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:ejerciciodeber1/Paginas/TreeCalculatorPage.dart';
 import 'Randomicos.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -98,7 +99,18 @@ class HomePage extends StatelessWidget {
                         );
                       },
                     ),
-                    // ... resto de ListTiles
+                    ListTile(
+                      leading: const Icon(Icons.calculate),
+                      title: const Text("Ejercicio 6:"),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TreeCalculatorPage(),
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),
