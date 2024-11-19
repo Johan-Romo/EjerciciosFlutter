@@ -119,4 +119,10 @@ class _PantallaFacturaElectricaState extends State<PantallaFacturaElectrica> {
       ),
     );
   }
+
+  @override
+  void dispose() {
+    _controladorConsumo.dispose();
+    super.dispose();
+  }
 }

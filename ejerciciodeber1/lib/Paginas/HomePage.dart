@@ -1,4 +1,5 @@
 import 'package:ejerciciodeber1/Paginas/ClasificadorEdad.dart';
+import 'package:ejerciciodeber1/Paginas/FacturaElectrica.dart';
 import 'package:ejerciciodeber1/Paginas/TernaPitagorica.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -79,7 +80,7 @@ class HomePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => TernaPitagorica(),
+                            builder: (context) => FacturaElectrica(),
                           ),
                         );
                       },
