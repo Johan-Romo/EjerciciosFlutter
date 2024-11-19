@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/services.dart';
 
 
@@ -28,10 +28,10 @@ class _ClasificadorEdadState extends State<ClasificadorEdad> {
         return;
       }
 
-      // Convertir el texto a número
+      // Intentamos parsear la edad
       int edad = int.tryParse(_edadController.text) ?? -1;
 
-      // Validar que sea un número positivo
+      // Validar si la edad es válida (mayor o igual a 0)
       if (edad < 0) {
         _mensaje = 'Por favor, ingrese una edad válida';
         _colorMensaje = Colors.red;
@@ -40,8 +40,18 @@ class _ClasificadorEdadState extends State<ClasificadorEdad> {
         return;
       }
 
+      // Validar si la edad es realista (no mayor a 110 años)
+      if (edad > 110) {
+        _mensaje = 'Por favor, ingrese una edad realista (hasta 110 años)';
+        _colorMensaje = Colors.red;
+        _resultado = '';
+        _imageUrl = '';
+        return;
+      }
+
       _mensaje = '';
-      // Clasificar según la edad y asignar imagen correspondiente
+
+      // Clasificación de edad
       if (edad <= 10) {
         _resultado = 'NIÑO';
         _colorMensaje = Colors.blue;
@@ -70,12 +80,14 @@ class _ClasificadorEdadState extends State<ClasificadorEdad> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Clasificador de Edad'),
-        backgroundColor: Colors.blue,
+        title: const Text('Clasificador de Edad' ,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18,color: Colors.white),),
+        backgroundColor: const Color(0xFF031634),
+        foregroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -106,10 +118,11 @@ class _ClasificadorEdadState extends State<ClasificadorEdad> {
                 onPressed: _clasificarEdad,
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  backgroundColor: const Color(0xFFcdb380),
                 ),
                 child: const Text(
                   'Clasificar',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18,color: Colors.white),
                 ),
               ),
               const SizedBox(height: 20),

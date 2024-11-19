@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-class FacturaElectrica extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: PantallaFacturaElectrica(),
-    );
-  }
-}
 
 class PantallaFacturaElectrica extends StatefulWidget {
-  @override
-  _PantallaFacturaElectricaState createState() =>
-      _PantallaFacturaElectricaState();
+    const PantallaFacturaElectrica({super.key});
+
+
+@override
+State<PantallaFacturaElectrica> createState() => _PantallaFacturaElectricaState();
 }
+
+
 
 class _PantallaFacturaElectricaState extends State<PantallaFacturaElectrica> {
   final TextEditingController _controladorConsumo = TextEditingController();
@@ -88,13 +82,22 @@ class _PantallaFacturaElectricaState extends State<PantallaFacturaElectrica> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cálculo de Factura Eléctrica"),
+        title: const Text('Costo Facturación Electrónica' ,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18,color: Colors.white),),
+        backgroundColor: const Color(0xFF031634),
+        foregroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            const Text(
+              'Calcule el valor de la factura a pagar::',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 40),
             TextField(
               controller: _controladorConsumo,
               keyboardType: TextInputType.number,

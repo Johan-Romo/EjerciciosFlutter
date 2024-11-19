@@ -29,8 +29,9 @@ class _TreeCalculatorPageState extends State<TreeCalculatorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Calculadora de Árboles'),
-        backgroundColor: const Color(0xFF2196F3),
+        title: const Text('Calculadora de Árboles' ,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18,color: Colors.white),),
+        backgroundColor: const Color(0xFF031634),
+        foregroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),

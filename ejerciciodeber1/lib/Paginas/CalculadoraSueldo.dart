@@ -68,26 +68,27 @@ class _PaginaCalculadoraSueldoState extends State<PaginaCalculadoraSueldo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFEF9E0),
+
       appBar: AppBar(
-        title: Text(
-          'Calculadora de Sueldo',
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        backgroundColor: const Color(0xFF374F1D),
-        elevation: 0,
+        title: const Text('Calculadora de Sueldo' ,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18,color: Colors.white),),
+        backgroundColor: const Color(0xFF031634),
+        foregroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            const Text(
+              'Ingrese sus datos para calcular el sueldo mensual correspondiente:',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 40),
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xFF586232),
+                color: const Color(0xFFcdb380),
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
@@ -125,7 +126,7 @@ class _PaginaCalculadoraSueldoState extends State<PaginaCalculadoraSueldo> {
             ElevatedButton(
               onPressed: _calcularSueldo,
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFB0802E),
+                backgroundColor: const Color(0xFF033649),
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),

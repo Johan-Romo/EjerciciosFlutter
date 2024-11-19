@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'dart:math';
-import 'Paginas/Randomicos.dart';
+
+
+
 import 'Paginas/HomePage.dart';
 // Clase principal del ejercicio
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: "Generador de Numero Randomico",
       home: HomePage(), // Movemos el Scaffold a una nueva página
     );

@@ -17,7 +17,6 @@ class _TernaPitagoricaState extends State<TernaPitagorica> {
   bool? _esTernaPitagorica;
 
   void _verificarTerna() {
-    // Validar que todos los campos tengan valores
     if (_controllerA.text.isEmpty ||
         _controllerB.text.isEmpty ||
         _controllerC.text.isEmpty) {
@@ -28,23 +27,23 @@ class _TernaPitagoricaState extends State<TernaPitagorica> {
       return;
     }
 
-    // Convertir texto a números
+
     int a = int.parse(_controllerA.text);
     int b = int.parse(_controllerB.text);
     int c = int.parse(_controllerC.text);
 
-    // Calcular los cuadrados
+
     int a2 = a * a;
     int b2 = b * b;
     int c2 = c * c;
 
-    // Verificar si es terna pitagórica
+
     bool esTerna = (a2 + b2 == c2) || (a2 + c2 == b2) || (b2 + c2 == a2);
 
     setState(() {
       if (esTerna) {
         _resultado = '¡Es una terna pitagórica!';
-        // Determinar qué caso se cumple
+
         if (a2 + b2 == c2) {
           _resultado += '\n$a² + $b² = $c²\n($a2 + $b2 = $c2)';
         } else if (a2 + c2 == b2) {
@@ -63,8 +62,9 @@ class _TernaPitagoricaState extends State<TernaPitagorica> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Verificador de Terna Pitagórica'),
-        backgroundColor: Colors.blue,
+        title: const Text('Verificador de Terna Pitagórica' ,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18,color: Colors.white),),
+        backgroundColor: const Color(0xFF031634),
+        foregroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
